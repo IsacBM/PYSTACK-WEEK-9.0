@@ -50,5 +50,9 @@ def logar(request):
         else:
             messages.add_message(request, constants.ERROR, 'Username ou senha incorretos. Tente novamente!')
             return redirect('/usuario/logar/')
-        return HttpResponse('Teste')
-        
+    
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/usuario/logar')
+    
